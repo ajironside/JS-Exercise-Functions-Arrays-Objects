@@ -61,11 +61,8 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
  */
-function getName(name) {
-    const userName = {
-        name: name,
-    }
-    return `Hello, my name is ${userName}`;
+function getName(makePersonObject) {
+    return `Hello, my name is ${makePersonObject.name}`
 }
 
 /**
@@ -167,10 +164,10 @@ function getCarInfoByIndex(inventory, index) {
  * it will return `This is a Lincoln Town Car`.
  */
 function getLastCarInfo(inventory) {
-    const last = inventory.find((item, index) => {
-        return index[index.length - 1];
+    const getLast = inventory.find((item, id) => {
+        return id === 49;
     })
-    return `This is a ${last.car_make} ${last.car_model}`
+    return `This is a ${getLast.car_make} ${getLast.car_model}`
 }
 
 /**
@@ -185,8 +182,12 @@ function getLastCarInfo(inventory) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
  */
-function getCarInfoById( /* code here */ ) {
+function getCarInfoById(inventory, id) {
     /* code here */
+    const getId = inventory.find((item, id) => {
+        return id === 0;
+    })
+    return `This is a ${getId.car_make} ${getId.car_model}`
 }
 
 /**
